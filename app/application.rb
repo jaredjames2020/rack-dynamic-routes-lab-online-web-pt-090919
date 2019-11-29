@@ -17,8 +17,7 @@ class Application
     if req.path.match(/items/)
       binding.pry
       item_request = req.path.split("/").last
-        @@items.detect{|i| i.name == item_name}
-        if @@items.include?(item_request)
+        if @@items.detect{|i| i.name == item_name}
           resp.write "#{item_request.price}"
         else
         resp.write "Route not found"
