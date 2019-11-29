@@ -7,7 +7,7 @@ class Application
     
     @@items = []
     
-    if req.path=="/items/#{Item.name}"
+    if req.path=="/items/"
       search_term = req.params["item"]
         @@items.include?(search_term)
         @@items<< search_term
