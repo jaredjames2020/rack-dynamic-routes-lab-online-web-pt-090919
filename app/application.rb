@@ -8,7 +8,7 @@ class Application
       item_price = req.path.split("/items/")
       item = @@item.find{|i| i.price == item_price}
  
-      resp.write song.artist
+      resp.write item.price
     else
       resp.write "Route not found"
       resp.status = 404
