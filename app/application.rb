@@ -9,9 +9,6 @@ class Application
     
     if req.path=="/items/#{Item.name}"
       
-      @@items.each do |item|
-        binding.pry
-      end
       
       item_price = req.path.split("/items/")
       item = @@item.find{|i| i.price == item_price}
