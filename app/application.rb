@@ -5,8 +5,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    if req.path=="/items/#{Item.name}"
       binding.pry
+    if req.path=="/items/#{Item.name}"
       
       item_price = req.path.split("/items/")
       item = @@item.find{|i| i.price == item_price}
