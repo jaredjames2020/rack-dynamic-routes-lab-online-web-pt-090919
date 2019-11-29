@@ -16,9 +16,9 @@ class Application
     
     if req.path.match(/items/)
       binding.pry
-      search_term = req.params["item"]
-        if @@items.include?(search_term)
-          resp.write "#{search_term.price}"
+      item_request = req.path.split("/").last
+        if @@items.include?(item_request)
+          resp.write "#{item_request.price}"
         else
         resp.write "Route not found"
         resp.status = 400
