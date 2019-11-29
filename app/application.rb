@@ -11,8 +11,11 @@ class Application
           resp.write "#{search_term.price}"
         else
         resp.write "Route not found"
-        resp.status = 404
+        resp.status = 400
         end
+    else
+        resp.write "Route not found"
+        resp.status = 404
     end
     
     resp.finish
