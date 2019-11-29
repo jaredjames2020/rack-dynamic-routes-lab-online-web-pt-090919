@@ -10,7 +10,9 @@ class Application
     if req.path=="/items/#{item.name}"
       resp.write "#{item.name}"
     else
-      resp.write 
+      resp.write "Route not found"
+      resp.status = 404
+    end
  
     @@songs.each do |song|
       resp.write "#{song.title}\n"
