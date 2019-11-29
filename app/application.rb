@@ -6,7 +6,6 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path.match(/items/)
-      binding.pry
       item_request = req.path.split("/").last
       item = @@items.detect{|i| i.name == item_request}
           if item 
