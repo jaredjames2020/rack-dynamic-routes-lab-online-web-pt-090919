@@ -8,12 +8,10 @@ class Application
     @@items = []
     
     if req.path=="/items/#{Item.name}"
-      
-      
-      item_price = req.path.split("/items/")
-      item = @@item.find{|i| i.price == item_price}
- 
-      resp.write item.price
+      search_term = req.params["item"]
+        @@items.include?(search_term)
+        @@items<< search_term
+        resp.write "#{search_term.price}"
     else
       resp.write "Route not found"
       resp.status = 404
