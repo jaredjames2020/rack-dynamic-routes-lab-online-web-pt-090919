@@ -9,12 +9,12 @@ class Application
     
     if req.path=="/items/"
       search_term = req.params["item"]
-        @@items.include?(search_term)
-        @@items << search_term
-        resp.write "#{search_term.price}"
-    else
-      resp.write "Route not found"
-      resp.status = 404
+        if @@items.include?(search_term)
+          resp.write "#{search_term.price}"
+        else
+        resp.write "Route not found"
+        resp.status = 404
+        end
     end
     
     resp.finish
