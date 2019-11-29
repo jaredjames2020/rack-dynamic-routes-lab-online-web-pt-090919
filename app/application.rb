@@ -5,7 +5,6 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-      binding.pry
     if req.path=="/items/#{Item.name}"
       
       item_price = req.path.split("/items/")
