@@ -8,7 +8,9 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path=="/items/#{item.name}"
-      
+      resp.write "#{item.name}"
+    else
+      resp.write 
  
     @@songs.each do |song|
       resp.write "#{song.title}\n"
