@@ -1,3 +1,4 @@
+require 'pry'
 class Application
   
   def call(env)
@@ -5,6 +6,7 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path=="/items/#{Item.name}"
+      binding.pry
       
       item_price = req.path.split("/items/")
       item = @@item.find{|i| i.price == item_price}
