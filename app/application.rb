@@ -5,8 +5,6 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    @@items = []
-    
     if req.path=="/items/"
       search_term = req.params["item"]
         if @@items.include?(search_term)
