@@ -13,11 +13,7 @@ class Application
       resp.write "Route not found"
       resp.status = 404
     end
- 
-    @@songs.each do |song|
-      resp.write "#{song.title}\n"
-    end
- 
+    
     resp.finish
   end
 end
