@@ -17,6 +17,7 @@ class Application
     if req.path.match(/items/)
       binding.pry
       item_request = req.path.split("/").last
+        @@items.detect{|i| i.name == item_name}
         if @@items.include?(item_request)
           resp.write "#{item_request.price}"
         else
